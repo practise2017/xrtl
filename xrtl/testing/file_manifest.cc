@@ -25,6 +25,9 @@ std::vector<std::pair<std::string, std::string>> FileManifest::file_paths_map;
 void FileManifest::ParseFromManifest(const std::string& executable_path) {
   file_paths_map.clear();
 
+  const char* cwd = std::getenv("PWD");
+  LOG(ERROR) << "cwd: " << cwd;
+
   // TEST_SRCDIR will point to runfiles when running under bazel test.
   const char* test_srcdir = std::getenv("TEST_SRCDIR");
   std::string runfiles_path = test_srcdir ? test_srcdir : "";

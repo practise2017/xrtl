@@ -51,3 +51,5 @@ script:
   - ./tools/ci/travis/build.sh
   - ./tools/ci/travis/test.sh
   - ./tools/ci/travis/analyze.sh
+  - ls -laR bazel-bin/
+  - ls -laR bazel-out/
